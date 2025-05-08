@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJ Tube</title>
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="../src/output.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    /* Sidebar styling */
+    #side-bar {
+      width: 15%;
+      height: 100vh;
+      transition: width 0.3s ease;
+    }
+
+    .small-side-bar {
+      width: 5% !important;
+    }
+
+    .small-side-bar p,
+    .small-side-bar h2
+   {
+      display: none;
+    }
+    .small-side-bar .bor{
+        width: 30px;
+     
+        margin-left: 8px;
+    }
+
+    .small-side-bar .flex-row {
+      justify-content: center;
+      
+    
+    }
+
+    .small-side-bar img {
+      margin: 0 auto;
+    }
+
+    /* Main content */
+    #main-content {
+
+      transition: margin-left 0.3s ease;
+
+    }
+
+    .expand-main {
+      padding-left: 7% !important;
+   
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="flex   lg:gap-4 lg:flex-row justify-between py-2 lg:px-5 px-2 items-start lg:items-center shadow-md shadow-black/50 bg-white z-20 fixed top-0 left-0 w-full">
+    <div class="nav-left flex flex-row lg:gap-3">
+      <div><img src="../public/images/menu 1.png" class=" size-11 cursor-pointer hidden md:block duration-1000" id="menu"></div>
+      <div class="flex flex-row gap-1 items-center">
+        <img src="../public/images/my logo.webp" class="size-11  ">
+        <h2 class="  lg:text-2xl font-semibold text-lg">AJ Tube</h2>
+      </div>
+    </div>
+    <div class="nav-middle flex flex-row gap-1 items-center">
+      <div class="relative w-[200px] md:w-[500px]">
+        <input type="search" class="w-full border-2 border-slate-300 rounded-full pl-11 py-2" >
+        <span class="bi bi-search text-xl text-gray-600 absolute left-4 top-2.5"></span>
+      </div>
+      <div>
+        <img src="../public/images/microphone" class="size-10">
+      </div>
+    </div>
+    <div class="nva-right flex flex-row gap-6">
+      <i class="bi bi-camera-video-fill text-2xl text-red-600 hidden md:block" ></i>
+      <i class="bi bi-grid-fill text-2xl hidden md:block"></i>
+      <i class="bi bi-bell-fill text-2xl hidden md:block"></i>
+      <img src="../public/images/avatar1.webp" class=" size-[30px] lg:size-[30px] rounded-full mt-1 lg:mt-[0px]">
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div id="side-bar" class=" hidden md:block lg:pl-[2%] fixed   md:pt-[76px] md:pb-5 bg-white top-0 h-full z-10 duration-1000">
+    <div class="flex flex-col gap-3">
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/homeicon.jpg" class="size-8"> <p>Home</p></a>
+      <a class="flex flex-row gap-2 items-center"><span class="bi bi-fire text-xl"></span><p>Explore</p></a>
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/homeicon.jpg" class="size-8"> <p>Subscription</p></a>
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/libraryicon.jpg" class="size-8"> <p>Library</p></a>
+      <a class="flex flex-row gap-2 items-center"><span class="bi bi-eye-fill text-xl"></span> <p>History</p></a>
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/screencast.jpg" class="size-8"> <p>Cast Videos</p></a>
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/songplaylist.jpg" class="size-8"> <p>Playlist</p></a>
+      <a class="flex flex-row gap-2 items-center"><img src="../public/images/messagebox.jpg" class="size-8"> <p>Messages</p></a>
+      <a class="flex flex-row gap-2 items-center"><span class="bi bi-chevron-down font-semibold"></span> <p>Show More</p></a>
+      <div class="border-b-2 border-b-gray-600 w-36 bor"></div>
+    </div>
+
+    <div class="flex flex-col gap-4 mt-2">
+      <h2 class="text-xl font-semibold">SUBSCRIBED</h2>
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-row gap-3 items-center"><img src="../public/images/avatar1.webp" class="size-[26px] rounded-full"><p>Abinash Rout</p></div>
+        <div class="flex flex-row gap-3 items-center"><img src="../public/images/avatar1.webp" class="size-[26px] rounded-full"><p>Abinash Rout</p></div>
+        <div class="flex flex-row gap-3 items-center"><img src="../public/images/avatar1.webp" class="size-[26px] rounded-full"><p>Abinash Rout</p></div>
+        <div class="flex flex-row gap-3 items-center"><img src="../public/images/avatar1.webp" class="size-[26px] rounded-full"><p>Abinash Rout</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div id="main-content" class=" pt-[100px] lg:pt-[80px] p-[1%] md:pl-[15%] lg:pl-[17%] transition-all duration-300">
+    <div class=" p-0 md:p-5 w-[100%]  ">
+          <div class="border border-black rounded-lg  overflow-hidden " >
+            <img src="../public/images/banner.jpg" class=" h-[150px] lg:h-[300px] w-screen rounded-lg hover:scale-125 transition-transform hover:opacity-90">
+          </div>
+    </div>
+      <!-- vedio sections.... -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
+
+        <div id="box-1" class="flex flex-col gap-5" onclick="vdoClick()">
+          <div class="overflow-hidden rounded-md">
+             <a href="#"> <img src="../ajtubeclone/images/lambocar.jpg" class="rounded-md hover:scale-125 transition-transform duration-700 hover:opacity-95"></a>
+          </div>
+          <div class="flex flex-row gap-1">
+             <div>
+              <img src="../public/images/avatar1.webp" class="rounded-full">
+             </div>
+             <div>
+              <a href="#" class="font-semibold text-[18px]" >Best chhanel for buying a lambo only for belioner|</a>
+              <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+              <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+             </div>
+          </div>
+
+       </div>
+      
+        <div id="box-2" class="flex flex-col gap-5"  onclick="vdoClick12()" >
+          <div class="overflow-hidden rounded-md">
+             <a href="#"> <img src="../public/images/mountainprojectimg.jpg" class="rounded-md hover:scale-125 transition-transform duration-700 hover:opacity-95"></a>
+          </div>
+          <div class="flex flex-row gap-1">
+             <div class=" ">
+              <img src="../public/images/avatar1.webp" class="rounded-full ">
+             </div>
+             <div>
+              <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+              <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+              <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+             </div>
+          </div>
+
+        </div>
+        <div id="box-3" class="flex flex-col gap-5">
+          <div>
+             <a href="#"> <img src="../public/images/seaprojectimg.jpg"  class="rounded-md"></a>
+          </div>
+          <div class="flex flex-row gap-1">
+             <div>
+              <img src="../public/images/avatar1.webp" class="rounded-full">
+             </div>
+             <div>
+              <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+              <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+              <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+             </div>
+          </div>
+
+       </div>
+      <div id="box-4" class="flex flex-col gap-5">
+        <div>
+           <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+        </div>
+        <div class="flex flex-row gap-1">
+           <div>
+            <img src="../public/images/avatar1.webp" class="rounded-full">
+           </div>
+           <div>
+            <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+            <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+            <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+           </div>
+        </div>
+
+      </div>
+      <div id="box-5" class="flex flex-col gap-5">
+        <div>
+           <a href="#"> <img src="../ajtubeclone/images/lambocar.jpg"  class="rounded-md"></a>
+        </div>
+        <div class="flex flex-row gap-1">
+           <div>
+            <img src="../public/images/avatar1.webp" class="rounded-full">
+           </div>
+           <div>
+            <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+            <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+            <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+           </div>
+        </div>
+
+     </div>
+      <div id="box-6"class="flex flex-col gap-5">
+      <div>
+         <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+      </div>
+      <div class="flex flex-row gap-1">
+         <div>
+          <img src="../public/images/avatar1.webp" class="rounded-full">
+         </div>
+         <div>
+          <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+          <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+          <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+         </div>
+      </div>
+
+    </div>
+    <div id="box-7" class="flex flex-col gap-5">
+      <div>
+         <a href="#"> <img src="../public/images/man1.png"  class="rounded-md"></a>
+      </div>
+      <div class="flex flex-row gap-1">
+         <div>
+          <img src="../public/images/avatar1.webp" class="rounded-full">
+         </div>
+         <div>
+          <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+          <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+          <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+         </div>
+      </div>
+
+   </div>
+  <div id="box-8" class="flex flex-col gap-5">
+    <div>
+       <a href="#"> <img src="../public/images/mountainprojectimg.jpg"  class="rounded-md"></a>
+    </div>
+    <div class="flex flex-row gap-1">
+       <div>
+        <img src="../public/images/avatar1.webp" class="rounded-full">
+       </div>
+       <div>
+        <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+        <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+        <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+       </div>
+    </div>
+
+  </div>
+  <div id="box-9" class="flex flex-col gap-5">
+    <div>
+       <a href="#"> <img src="../public/images/students.jpg"  class="rounded-md"></a>
+    </div>
+    <div class="flex flex-row gap-1">
+       <div>
+        <img src="../public/images/avatar1.webp" class="rounded-full">
+       </div>
+       <div>
+        <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+        <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+        <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+       </div>
+    </div>
+
+ </div>
+<div id="box-10" class="flex flex-col gap-5">
+  <div>
+     <a href="#"> <img src="../ajtubeclone/images/lambocar1.jpg"  class="rounded-md"></a>
+  </div>
+  <div class="flex flex-row gap-1">
+     <div>
+      <img src="../public/images/avatar1.webp" class="rounded-full">
+     </div>
+     <div>
+      <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+      <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+      <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+     </div>
+  </div>
+
+</div>
+<div id="box-11" class="flex flex-col gap-5">
+  <div>
+     <a href="#"> <img src="../ajtubeclone/images/bear.jpg" class="rounded-md"></a>
+  </div>
+  <div class="flex flex-row gap-1">
+     <div>
+      <img src="../public/images/avatar1.webp" class="rounded-full">
+     </div>
+     <div>
+      <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+      <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+      <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+     </div>
+  </div>
+
+</div>
+<div id="box-12" class="flex flex-col gap-5">
+<div>
+   <a href="#"> <img src="../ajtubeclone/images/lambocar1.jpg"  class="rounded-md"></a>
+</div>
+<div class="flex flex-row gap-1">
+   <div>
+    <img src="../public/images/avatar1.webp" class="rounded-full">
+   </div>
+   <div>
+    <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+    <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+    <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+   </div>
+</div>
+
+</div>
+<div id="box-13" class="flex flex-col gap-5">
+  <div>
+     <a href="#"> <img src="../ajtubeclone/"  class="rounded-md"></a>
+  </div>
+  <div class="flex flex-row gap-1">
+     <div>
+      <img src="../public/images/avatar1.webp" class="rounded-full">
+     </div>
+     <div>
+      <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+      <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+      <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+     </div>
+  </div>
+
+</div>
+<div id="box-14" class="flex flex-col gap-5">
+<div>
+   <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+</div>
+<div class="flex flex-row gap-1">
+   <div>
+    <img src="../public/images/avatar1.webp" class="rounded-full">
+   </div>
+   <div>
+    <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+    <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+    <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+   </div>
+</div>
+
+</div>
+
+    </div>
+  </div>
+
+  <div id="vdo_content" class="md:pl-24 hidden">
+    <div class="vedio flex flex-col md:flex-row gap-10 pt-[20px]">
+        
+     <div id="left-bar" class="pt-[70px] pl-[20px] flex-1 ">
+  
+                   <div >
+                   <a href="youtube.html" class="  "> <span class="bi bi-chevron-left">Back</span></a>
+                   </div>
+ 
+               <div>
+                  <video controls autoplay class="w-full pr-5 ">
+                      <source src="../public/images/Lamborghini_Gallardo_Cinematic_Video_[4K](360p).mp4" type="video/mp4">
+                    </video>
+               </div>
+               <div class="pt-3 flex flex-col gap-4">
+                   <div class="flex flex-row gap-3">
+                      <p class="font-semibold ">HTML</p>
+                      <p class="font-semibold ">CSS</p>
+                      <p class="font-semibold ">JAVASCRIPT</p>
+                   </div>
+                   <div>
+                      <h2 class=" text-lg md:text-xl lg:text-2xl font-semibold">Practice Makes Man Perfect.Howmuch You Spent Time,Your Skill Increase Accordingly|</h2>
+                   </div>
+                   <div class="flex flex-row ">
+                      <div>
+                       <p class="text-md font-medium text-gray-600">122K Veiwes * 2 days ago</p>
+                      </div>
+                
+                   </div>
+                   <div class="flex flex-row justify-between  pt-5 px-4 md:px-6 lg:px-10">
+                   <div class="flex flex-row gap-2 items-center">
+                      <div class="flex flex-row gap-1 items-center">
+                          <img src="../public/images/my logo.webp" class="size-11  ">
+                          <h2 class="  lg:text-2xl font-semibold text-lg">AJ Tube</h2>
+                      </div>
+                      <div>
+                          <p class="text-sm text-gray-600">11.4 lakh</p>
+                      </div>
+                   </div>
+                        <div>
+                          <h2 class="bg-red-600 text-white rounded-full py-2 px-3 md:px-5">Subscribe <span class="bi bi-bell"></span></h2>
+                        </div>
+                   </div>
+                   <div class="flex flex-row gap-5 md:justify-end md:items-end justify-center items-center" >
+                      <div>
+                          <p class=" text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full"><span class="bi bi-hand-thumbs-up mr-2">15.3k</span> | <span class="bi bi-hand-thumbs-down"></span></p>
+                      </div>
+                      <div>
+                          <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full "><span class="bi bi-share mr-2"></span>Share</p>
+                      </div>
+                      <div>
+                          <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full "><span class="bi bi-check-circle-fill mr-2"></span>Download</p>
+                      </div>
+                      <div>
+                        <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full mr-2"><span class="bi bi-save mr-2"></span>Save</p>
+                    </div>
+
+                   </div>
+               </div>
+      </div>
+      <div id="right-bar" class="pt-[70px] px-4 flex flex-col gap-3 overflow-auto flex-1">
+            <div id="box-1" class="flex flex-col md:flex-row  gap-5 -pl-14"> 
+              <div>
+                 <a href="#"> <img src="../public/images/lambocar.jpg" class="rounded-md"></a>
+              </div>
+              <div class="flex flex-row gap-1">
+                 <div>
+                  <img src="../public/images/avatar1.webp" class="rounded-full">
+                 </div>
+                 <div>
+                  <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                  <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                  <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+                 </div>
+              </div>
+  
+           </div>   
+    
+            <div id="box-3" class="flex flex-col md:flex-row gap-5">
+              <div>
+                 <a href="#"> <img src="../public/images/seaprojectimg.jpg"  class="rounded-md"></a>
+              </div>
+              <div class="flex flex-row gap-1">
+                 <div>
+                  <img src="../public/images/avatar1.webp" class="rounded-full">
+                 </div>
+                 <div>
+                  <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                  <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                  <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+                 </div>
+              </div>
+    
+           </div>
+          <div id="box-4" class="flex flex-col md:flex-row gap-5">
+            <div>
+               <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+            </div>
+            <div class="flex flex-row gap-1">
+               <div>
+                <img src="../public/images/avatar1.webp" class="rounded-full">
+               </div>
+               <div>
+                <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+               </div>
+            </div>
+    
+          </div>
+          <div id="box-5" class="flex flex-col md:flex-row gap-5">
+            <div>
+               <a href="#"> <img src="../public/images/lambocar.jpg"  class="rounded-md"></a>
+            </div>
+            <div class="flex flex-row gap-1">
+               <div>
+                <img src="../public/images/avatar1.webp" class="rounded-full">
+               </div>
+               <div>
+                <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+               </div>
+            </div>
+    
+          </div>
+          <div id="box-6"class="flex flex-col md:flex-row gap-5">
+          <div>
+             <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+          </div>
+          <div class="flex flex-row gap-1">
+             <div>
+              <img src="../public/images/avatar1.webp" class="rounded-full">
+             </div>
+             <div>
+              <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+              <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+              <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+             </div>
+          </div>
+    
+          </div>
+          <div id="box-7" class="flex flex-col md:flex-row  gap-5">
+          <div>
+             <a href="#"> <img src="../public/images/man1.png"  class="rounded-md"></a>
+          </div>
+          <div class="flex flex-row gap-1">
+             <div>
+              <img src="../public/images/avatar1.webp" class="rounded-full">
+             </div>
+             <div>
+              <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+              <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+              <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+             </div>
+          </div>
+    
+          </div>
+
+         <div id="box-11" class="flex flex-col md:flex-row  gap-5">
+      <div>
+         <a href="#"> <img src="../public/images/bear.jpg" class="rounded-md"></a>
+      </div>
+      <div class="flex flex-row gap-1">
+         <div>
+          <img src="../public/images/avatar1.webp" class="rounded-full">
+         </div>
+         <div>
+          <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+          <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+          <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+         </div>
+      </div>
+    
+         </div>
+
+         <div id="box-13" class="flex flex-col md:flex-row  gap-5">
+      <div>
+         <a href="#"> <img src="../public/images/seaprojectimg.jpg"  class="rounded-md"></a>
+      </div>
+      <div class="flex flex-row gap-1">
+         <div>
+          <img src="../public/images/avatar1.webp" class="rounded-full">
+         </div>
+         <div>
+          <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+          <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+          <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+         </div>
+      </div>
+    
+          </div>
+         <div id="box-14" class="flex flex-col md:flex-row  gap-5">
+    <div>
+       <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+    </div>
+    <div class="flex flex-row gap-1">
+       <div>
+        <img src="../public/images/avatar1.webp" class="rounded-full">
+       </div>
+       <div>
+        <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+        <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+        <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+       </div>
+    </div>
+    
+         </div>
+     
+         <div id="box-9" class="flex flex-col md:flex-row gap-5">
+      <div>
+         <a href="#"> <img src="../public/images/students.jpg"  class="rounded-md"></a>
+      </div>
+      <div class="flex flex-row gap-1">
+         <div>
+          <img src="../public/images/avatar1.webp" class="rounded-full">
+         </div>
+         <div>
+          <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+          <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+          <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+         </div>
+      </div>
+  
+       </div>
+         <div id="box-10" class="flex flex-col md:flex-row  gap-5">
+    <div>
+       <a href="#"> <img src="../public/images/lambocar1.jpg"  class="rounded-md"></a>
+    </div>
+    <div class="flex flex-row gap-1">
+       <div>
+        <img src="../public/images/avatar1.webp" class="rounded-full">
+       </div>
+       <div>
+        <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+        <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+        <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+       </div>
+    </div>
+  
+       </div>             
+      </div>
+       
+    </div>
+</div>
+<div id="vdo_content1" class="md:pl-24 hidden">
+   <div class="vedio flex flex-col md:flex-row gap-10 pt-[20px]">
+       
+    <div id="left-bar" class="pt-[70px] pl-[20px] flex-1 ">
+ 
+                  <div >
+                  <a href="youtube.html" class="  "> <span class="bi bi-chevron-left">Back</span></a>
+                  </div>
+
+              <div>
+                 <video controls autoplay class="w-full pr-5 ">
+                     <source src="../public/images/4K_Relaxing_Nature_Sounds_-_Short_Video_Clips_of_Nature(360p).mp4" type="video/mp4">
+                   </video>
+              </div>
+              <div class="pt-3 flex flex-col gap-4">
+                  <div class="flex flex-row gap-3">
+                     <p class="font-semibold ">HTML</p>
+                     <p class="font-semibold ">CSS</p>
+                     <p class="font-semibold ">JAVASCRIPT</p>
+                  </div>
+                  <div>
+                     <h2 class=" text-lg md:text-xl lg:text-2xl font-semibold">Practice Makes Man Perfect.Howmuch You Spent Time,Your Skill Increase Accordingly|</h2>
+                  </div>
+                  <div class="flex flex-row ">
+                     <div>
+                      <p class="text-md font-medium text-gray-600">122K Veiwes * 2 days ago</p>
+                     </div>
+               
+                  </div>
+                  <div class="flex flex-row justify-between  pt-5 px-4 md:px-6 lg:px-10">
+                  <div class="flex flex-row gap-2 items-center">
+                     <div class="flex flex-row gap-1 items-center">
+                         <img src="../public/images/my logo.webp" class="size-11  ">
+                         <h2 class="  lg:text-2xl font-semibold text-lg">AJ Tube</h2>
+                     </div>
+                     <div>
+                         <p class="text-sm text-gray-600">11.4 lakh</p>
+                     </div>
+                  </div>
+                       <div>
+                         <h2 class="bg-red-600 text-white rounded-full py-2 px-3 md:px-5">Subscribe <span class="bi bi-bell"></span></h2>
+                       </div>
+                  </div>
+                  <div class="flex flex-row gap-5 md:justify-end md:items-end justify-center items-center" >
+                     <div>
+                         <p class=" text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full"><span class="bi bi-hand-thumbs-up mr-2">15.3k</span> | <span class="bi bi-hand-thumbs-down"></span></p>
+                     </div>
+                     <div>
+                         <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full "><span class="bi bi-share mr-2"></span>Share</p>
+                     </div>
+                     <div>
+                         <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full "><span class="bi bi-check-circle-fill mr-2"></span>Download</p>
+                     </div>
+                     <div>
+                       <p  class="text-sm md:text-[16px] px-1 md:px-3 py-1 bg-gray-500/50 rounded-full mr-2"><span class="bi bi-save mr-2"></span>Save</p>
+                   </div>
+
+                  </div>
+              </div>
+     </div>
+     <div id="right-bar" class="pt-[70px] px-4 flex flex-col gap-3 overflow-auto flex-1">
+           <div id="box-1" class="flex flex-col md:flex-row  gap-5 -pl-14"> 
+             <div>
+                <a href="#"> <img src="../public/images/lambocar.jpg" class="rounded-md"></a>
+             </div>
+             <div class="flex flex-row gap-1">
+                <div>
+                 <img src="../public/images/avatar1.webp" class="rounded-full">
+                </div>
+                <div>
+                 <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                 <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                 <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+                </div>
+             </div>
+ 
+          </div>   
+   
+           <div id="box-3" class="flex flex-col md:flex-row gap-5">
+             <div>
+                <a href="#"> <img src="../public/images/seaprojectimg.jpg"  class="rounded-md"></a>
+             </div>
+             <div class="flex flex-row gap-1">
+                <div>
+                 <img src="../public/images/avatar1.webp" class="rounded-full">
+                </div>
+                <div>
+                 <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+                 <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+                 <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+                </div>
+             </div>
+   
+          </div>
+         <div id="box-4" class="flex flex-col md:flex-row gap-5">
+           <div>
+              <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+           </div>
+           <div class="flex flex-row gap-1">
+              <div>
+               <img src="../public/images/avatar1.webp" class="rounded-full">
+              </div>
+              <div>
+               <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+               <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+               <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+              </div>
+           </div>
+   
+         </div>
+         <div id="box-5" class="flex flex-col md:flex-row gap-5">
+           <div>
+              <a href="#"> <img src="../public/images/lambocar.jpg"  class="rounded-md"></a>
+           </div>
+           <div class="flex flex-row gap-1">
+              <div>
+               <img src="../public/images/avatar1.webp" class="rounded-full">
+              </div>
+              <div>
+               <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+               <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+               <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+              </div>
+           </div>
+   
+         </div>
+         <div id="box-6"class="flex flex-col md:flex-row gap-5">
+         <div>
+            <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+         </div>
+         <div class="flex flex-row gap-1">
+            <div>
+             <img src="../public/images/avatar1.webp" class="rounded-full">
+            </div>
+            <div>
+             <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+             <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+             <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+            </div>
+         </div>
+   
+         </div>
+         <div id="box-7" class="flex flex-col md:flex-row  gap-5">
+         <div>
+            <a href="#"> <img src="../public/images/man1.png"  class="rounded-md"></a>
+         </div>
+         <div class="flex flex-row gap-1">
+            <div>
+             <img src="../public/images/avatar1.webp" class="rounded-full">
+            </div>
+            <div>
+             <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+             <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+             <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+            </div>
+         </div>
+   
+         </div>
+
+        <div id="box-11" class="flex flex-col md:flex-row  gap-5">
+     <div>
+        <a href="#"> <img src="../public/images/bear.jpg" class="rounded-md"></a>
+     </div>
+     <div class="flex flex-row gap-1">
+        <div>
+         <img src="../public/images/avatar1.webp" class="rounded-full">
+        </div>
+        <div>
+         <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+         <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+         <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+        </div>
+     </div>
+   
+        </div>
+
+        <div id="box-13" class="flex flex-col md:flex-row  gap-5">
+     <div>
+        <a href="#"> <img src="../public/images/seaprojectimg.jpg"  class="rounded-md"></a>
+     </div>
+     <div class="flex flex-row gap-1">
+        <div>
+         <img src="../public/images/avatar1.webp" class="rounded-full">
+        </div>
+        <div>
+         <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+         <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+         <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+        </div>
+     </div>
+   
+         </div>
+        <div id="box-14" class="flex flex-col md:flex-row  gap-5">
+   <div>
+      <a href="#"> <img src="../public/images/google office.jpg"  class="rounded-md"></a>
+   </div>
+   <div class="flex flex-row gap-1">
+      <div>
+       <img src="../public/images/avatar1.webp" class="rounded-full">
+      </div>
+      <div>
+       <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+       <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+       <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+      </div>
+   </div>
+   
+        </div>
+    
+        <div id="box-9" class="flex flex-col md:flex-row gap-5">
+     <div>
+        <a href="#"> <img src="../public/images/students.jpg"  class="rounded-md"></a>
+     </div>
+     <div class="flex flex-row gap-1">
+        <div>
+         <img src="../public/images/avatar1.webp" class="rounded-full">
+        </div>
+        <div>
+         <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+         <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+         <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+        </div>
+     </div>
+ 
+      </div>
+        <div id="box-10" class="flex flex-col md:flex-row  gap-5">
+   <div>
+      <a href="#"> <img src="../public/images/lambocar1.jpg"  class="rounded-md"></a>
+   </div>
+   <div class="flex flex-row gap-1">
+      <div>
+       <img src="../public/images/avatar1.webp" class="rounded-full">
+      </div>
+      <div>
+       <a href="#" class="font-semibold text-[18px]">Best chhanel for buying a lambo only for belioner|</a>
+       <h2 class="text-gray-500 font-medium text-lg mt-3">Abinash Tube</h2>
+       <p class="text-gray-500 font-medium text-md">15K veiwes 2 Days</p>
+      </div>
+   </div>
+ 
+      </div>             
+     </div>
+      
+   </div>
+</div>
+
+
+
+
+
+
+
+<script src="./youtube.js"></script>
+</body>
+</html>
